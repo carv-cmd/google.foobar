@@ -1,0 +1,63 @@
+ 39           0 LOAD_GLOBAL              0 (xrange)
+              3 LOAD_GLOBAL              1 (reduce)
+              6 LOAD_GLOBAL              2 (enumerate)
+              9 LOAD_GLOBAL              3 (xor)
+             12 BUILD_TUPLE              4
+             15 UNPACK_SEQUENCE          4
+             18 STORE_FAST               2 (_xrange)
+             21 STORE_FAST               3 (_reduce)
+             24 STORE_FAST               4 (_enum)
+             27 STORE_FAST               5 (_xor)
+
+ 40          30 LOAD_GLOBAL              4 (array)
+             33 LOAD_CONST               1 ('L')
+             36 CALL_FUNCTION            1
+             39 STORE_FAST               6 (_array)
+
+ 41          42 LOAD_FAST                6 (_array)
+             45 LOAD_ATTR                5 (append)
+             48 STORE_FAST               7 (_arrayappend)
+
+ 42          51 SETUP_LOOP              82 (to 136)
+             54 LOAD_FAST                4 (_enum)
+             57 LOAD_FAST                2 (_xrange)
+             60 LOAD_FAST                0 (start)
+             63 LOAD_FAST                0 (start)
+             66 LOAD_FAST                1 (length)
+             69 BINARY_ADD          
+             70 CALL_FUNCTION            2
+             73 CALL_FUNCTION            1
+             76 GET_ITER            
+        >>   77 FOR_ITER                55 (to 135)
+             80 UNPACK_SEQUENCE          2
+             83 STORE_FAST               8 (_ex)
+             86 STORE_FAST               9 (_ix)
+
+ 43          89 LOAD_FAST                7 (_arrayappend)
+
+ 44          92 LOAD_FAST                3 (_reduce)
+             95 LOAD_FAST                5 (_xor)
+
+ 45          98 LOAD_FAST                2 (_xrange)
+            101 LOAD_FAST                9 (_ix)
+            104 LOAD_FAST                9 (_ix)
+            107 LOAD_FAST                1 (length)
+            110 LOAD_FAST                1 (length)
+            113 LOAD_FAST                8 (_ex)
+            116 BINARY_SUBTRACT     
+            117 BINARY_MULTIPLY     
+            118 BINARY_ADD          
+            119 LOAD_FAST                1 (length)
+            122 CALL_FUNCTION            3
+            125 CALL_FUNCTION            2
+            128 CALL_FUNCTION            1
+            131 POP_TOP             
+            132 JUMP_ABSOLUTE           77
+        >>  135 POP_BLOCK           
+
+ 46     >>  136 LOAD_GLOBAL              1 (reduce)
+            139 LOAD_FAST                5 (_xor)
+            142 LOAD_FAST                6 (_array)
+            145 CALL_FUNCTION            2
+            148 RETURN_VALUE        
+None

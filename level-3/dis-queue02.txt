@@ -1,0 +1,115 @@
+ 79           0 LOAD_CONST               1 (0)
+              3 STORE_FAST               2 (istart)
+
+ 80           6 LOAD_CONST               1 (0)
+              9 STORE_FAST               3 (ilength)
+
+ 81          12 LOAD_CONST               1 (0)
+             15 STORE_FAST               4 (chksum)
+
+ 83          18 SETUP_LOOP             220 (to 241)
+             21 LOAD_GLOBAL              0 (xrange)
+             24 LOAD_FAST                1 (length)
+             27 CALL_FUNCTION            1
+             30 GET_ITER            
+        >>   31 FOR_ITER               206 (to 240)
+             34 STORE_FAST               5 (irow)
+
+ 85          37 LOAD_FAST                0 (start)
+             40 LOAD_FAST                5 (irow)
+             43 LOAD_FAST                1 (length)
+             46 BINARY_MULTIPLY     
+             47 BINARY_ADD          
+             48 STORE_FAST               2 (istart)
+
+ 86          51 LOAD_FAST                1 (length)
+             54 LOAD_FAST                5 (irow)
+             57 BINARY_SUBTRACT     
+             58 STORE_FAST               3 (ilength)
+
+ 88          61 LOAD_FAST                1 (length)
+             64 LOAD_CONST               2 (2)
+             67 COMPARE_OP               4 (>)
+             70 POP_JUMP_IF_FALSE      179
+
+ 89          73 LOAD_FAST                2 (istart)
+             76 LOAD_CONST               3 (1)
+             79 BINARY_AND          
+             80 POP_JUMP_IF_FALSE      116
+
+ 90          83 LOAD_FAST                4 (chksum)
+             86 LOAD_FAST                2 (istart)
+             89 INPLACE_XOR         
+             90 STORE_FAST               4 (chksum)
+
+ 91          93 LOAD_FAST                3 (ilength)
+             96 LOAD_CONST               3 (1)
+             99 INPLACE_SUBTRACT    
+            100 STORE_FAST               3 (ilength)
+            103 LOAD_FAST                2 (istart)
+            106 LOAD_CONST               3 (1)
+            109 INPLACE_ADD         
+            110 STORE_FAST               2 (istart)
+            113 JUMP_FORWARD             0 (to 116)
+
+ 92     >>  116 LOAD_FAST                3 (ilength)
+            119 LOAD_CONST               3 (1)
+            122 BINARY_AND          
+            123 POP_JUMP_IF_FALSE      153
+
+ 93         126 LOAD_FAST                3 (ilength)
+            129 LOAD_CONST               3 (1)
+            132 INPLACE_SUBTRACT    
+            133 STORE_FAST               3 (ilength)
+
+ 94         136 LOAD_FAST                4 (chksum)
+            139 LOAD_FAST                2 (istart)
+            142 LOAD_FAST                3 (ilength)
+            145 BINARY_ADD          
+            146 INPLACE_XOR         
+            147 STORE_FAST               4 (chksum)
+            150 JUMP_FORWARD             0 (to 153)
+
+ 95     >>  153 LOAD_FAST                3 (ilength)
+            156 LOAD_CONST               4 (4)
+            159 BINARY_MODULO       
+            160 POP_JUMP_IF_FALSE      237
+
+ 96         163 LOAD_FAST                4 (chksum)
+            166 LOAD_CONST               3 (1)
+            169 INPLACE_XOR         
+            170 STORE_FAST               4 (chksum)
+            173 JUMP_ABSOLUTE          237
+            176 JUMP_ABSOLUTE           31
+
+ 99     >>  179 LOAD_FAST                3 (ilength)
+            182 LOAD_CONST               2 (2)
+            185 COMPARE_OP               2 (==)
+            188 POP_JUMP_IF_FALSE      212
+
+100         191 LOAD_FAST                4 (chksum)
+            194 LOAD_FAST                2 (istart)
+            197 LOAD_FAST                2 (istart)
+            200 LOAD_CONST               3 (1)
+            203 BINARY_ADD          
+            204 BINARY_XOR          
+            205 INPLACE_XOR         
+            206 STORE_FAST               4 (chksum)
+            209 JUMP_FORWARD             0 (to 212)
+
+101     >>  212 LOAD_FAST                3 (ilength)
+            215 LOAD_CONST               3 (1)
+            218 COMPARE_OP               2 (==)
+            221 POP_JUMP_IF_FALSE       31
+
+102         224 LOAD_FAST                4 (chksum)
+            227 LOAD_FAST                2 (istart)
+            230 INPLACE_XOR         
+            231 STORE_FAST               4 (chksum)
+            234 JUMP_ABSOLUTE           31
+        >>  237 JUMP_ABSOLUTE           31
+        >>  240 POP_BLOCK           
+
+104     >>  241 LOAD_FAST                4 (chksum)
+            244 RETURN_VALUE        
+None

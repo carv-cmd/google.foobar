@@ -1,0 +1,111 @@
+ 69           0 LOAD_GLOBAL              0 (xor)
+              3 STORE_FAST               2 (_xorbits)
+
+ 70           6 LOAD_GLOBAL              1 (xor_rowspan)
+              9 STORE_DEREF              0 (_rowxor)
+
+ 71          12 LOAD_CLOSURE             0 (_rowxor)
+             15 LOAD_CLOSURE             1 (length)
+             18 LOAD_CLOSURE             2 (start)
+             21 BUILD_TUPLE              3
+             24 LOAD_CONST               1 (<code object <genexpr> at 0xffff9e331d30, file "squeues.py", line 71>)
+             27 MAKE_CLOSURE             0
+
+ 72          30 LOAD_GLOBAL              2 (xrange)
+             33 LOAD_DEREF               1 (length)
+             36 CALL_FUNCTION            1
+             39 GET_ITER            
+             40 CALL_FUNCTION            1
+             43 STORE_FAST               3 (_chksum)
+
+ 73          46 LOAD_GLOBAL              3 (reduce)
+             49 LOAD_FAST                2 (_xorbits)
+             52 LOAD_FAST                3 (_chksum)
+             55 CALL_FUNCTION            2
+             58 RETURN_VALUE        
+None
+
+
+
+ 51           0 LOAD_FAST                1 (length)
+              3 POP_JUMP_IF_TRUE        15
+
+ 52           6 LOAD_CONST               1 (0)
+              9 STORE_FAST               2 (_rxor)
+             12 JUMP_FORWARD           156 (to 171)
+
+ 53     >>   15 LOAD_FAST                1 (length)
+             18 LOAD_CONST               2 (1)
+             21 COMPARE_OP               2 (==)
+             24 POP_JUMP_IF_FALSE       36
+
+ 54          27 LOAD_FAST                0 (start)
+             30 STORE_FAST               2 (_rxor)
+             33 JUMP_FORWARD           135 (to 171)
+
+ 55     >>   36 LOAD_FAST                1 (length)
+             39 LOAD_CONST               3 (2)
+             42 COMPARE_OP               2 (==)
+             45 POP_JUMP_IF_FALSE       65
+
+ 56          48 LOAD_FAST                0 (start)
+             51 LOAD_FAST                0 (start)
+             54 LOAD_CONST               2 (1)
+             57 BINARY_ADD          
+             58 BINARY_XOR          
+             59 STORE_FAST               2 (_rxor)
+             62 JUMP_FORWARD           106 (to 171)
+
+ 58     >>   65 LOAD_FAST                0 (start)
+             68 LOAD_CONST               2 (1)
+             71 BINARY_AND          
+             72 POP_JUMP_IF_FALSE      108
+
+ 59          75 LOAD_FAST                2 (_rxor)
+             78 LOAD_FAST                0 (start)
+             81 INPLACE_XOR         
+             82 STORE_FAST               2 (_rxor)
+
+ 60          85 LOAD_FAST                1 (length)
+             88 LOAD_CONST               2 (1)
+             91 INPLACE_SUBTRACT    
+             92 STORE_FAST               1 (length)
+
+ 61          95 LOAD_FAST                0 (start)
+             98 LOAD_CONST               2 (1)
+            101 INPLACE_ADD         
+            102 STORE_FAST               0 (start)
+            105 JUMP_FORWARD             0 (to 108)
+
+ 62     >>  108 LOAD_FAST                1 (length)
+            111 LOAD_CONST               2 (1)
+            114 BINARY_AND          
+            115 POP_JUMP_IF_FALSE      145
+
+ 63         118 LOAD_FAST                1 (length)
+            121 LOAD_CONST               2 (1)
+            124 INPLACE_SUBTRACT    
+            125 STORE_FAST               1 (length)
+
+ 64         128 LOAD_FAST                2 (_rxor)
+            131 LOAD_FAST                0 (start)
+            134 LOAD_FAST                1 (length)
+            137 BINARY_ADD          
+            138 INPLACE_XOR         
+            139 STORE_FAST               2 (_rxor)
+            142 JUMP_FORWARD             0 (to 145)
+
+ 65     >>  145 LOAD_FAST                2 (_rxor)
+            148 LOAD_FAST                1 (length)
+            151 LOAD_CONST               4 (4)
+            154 BINARY_MODULO       
+            155 POP_JUMP_IF_FALSE      164
+            158 LOAD_CONST               2 (1)
+            161 JUMP_FORWARD             3 (to 167)
+        >>  164 LOAD_CONST               1 (0)
+        >>  167 INPLACE_XOR         
+            168 STORE_FAST               2 (_rxor)
+
+ 66     >>  171 LOAD_FAST                2 (_rxor)
+            174 RETURN_VALUE        
+None

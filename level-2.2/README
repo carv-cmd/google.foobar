@@ -1,0 +1,59 @@
+Power Hungry
+============
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+-> Write a function solution(xs) that takes a list of integers representing; 
+
+	-> The power output levels of each panel in an array.
+
+		-> And returns the maximum product of some non-empty subset of those numbers. 
+
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+# Sample Array: [2, -3, 1, 0, -5]
+
+-> Maximum output subset would be:
+
+		>>> ( xs[0] = 2 ), ( xs[1] = -3 ), ( xs[4] = -5 )
+
+			-> Giving the product 2*(-3)*(-5) = 30.  
+
+-> So solution( [2,-3,1,0,-5] ) will be " 30 ".
+
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+Each array of solar panels contains:
+
+	-> At least 1 and no more than 50 panels
+
+	-> Each panel will have a power output level whose absolute value isnogreater than 1000;
+
+		-> 2 net negative panels act the same as integers, go figure
+
+-> The final products may be very large, 
+
+	-> Therefore, return integer value in string representation
+
+============================================
+-- Python cases --
+============================================
+
+Input: solution.solution([2, 0, 2, 2, 0])
+
+Output: 8
+
+============================================
+
+Input: solution.solution([-2, -3, 4, -5])
+
+Output: 60
+
+============================================
+
+
+

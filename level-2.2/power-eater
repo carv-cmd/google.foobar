@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# lan-jan: invokes lance-janice.py script
+
+cd ~/google.foobar/level-1
+
+while read SOLUTE; do
+
+		python2.7 lance-janice.py -i "${SOLUTE}"
+
+done < <(cat SOLUTIONS)
+
+
+

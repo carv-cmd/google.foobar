@@ -1,0 +1,208 @@
+=== === === ===
+ Bomb, Baby!
+=== === === ===
+
+You're so close to destroying the LAMBCHOP doomsday device you can taste it!
+
+But in order to do so: 
+	~> We need to deploy special self-replicating bombs 
+
+There are two types: 
+	~> Mach bombs (M) & Facula bombs (F)
+
+
+The bombs, once released into the LAMBCHOP's inner workings, 
+	~> Auto-seek all the strategic points you've identified 
+	~-> And destroy them at the same time. 
+
+
+###########################################################################
+But there's a few catches. 
+###########################################################################
+
+================================================================
+1) The bombs self-replicate via one of two distinct processes: 
+================================================================
+# Every [ Mach ] bomb; 
+	# retrieves a sync unit from a Facula bomb;
+		# for every Mach bomb, 
+			# Facula bomb is created;
+
+)>>> (F) => [ M => F ]
+
+================================================================
+# Every [ Facula ] bomb; 
+	# spontaneously creates a Mach bomb.
+		
+)>>> F => M 
+
+================================================================
+
+# Parent Nodes:
+	( nodeA, nodeZ )
+
+# Production Rules:
+	Process(1):
+		clankA = nodeA + nodeZ
+		clankZ = nodeZ
+
+	Process(2):
+		clankA = nodeA
+		clankZ = nodeA + nodeZ
+
+# Selection:
+	
+
+
+|=== === === |=== === === === === === === === === 
+|   SEED     | [ 1 Mach ] && [ 1 Fak ]
+|=== === === |=== === === === === === === === === 
+| PRODUCTION | 
+|   RULES    |
+|=== === === |=== === === === === === === === === 
+
+For example;
+
+	~> (given) you had [ 3 Mach ] bombs & [ 2 Facula ] bombs
+			
+	~-> (return) they could either produce;
+	
+		~-> [ 3 Mach ] bombs and [ 5 Facula ] bombs
+		 -or-
+		~-> [ 5 Mach ] bombs and 2 Facula ] bombs
+
+	*** The replication process can be changed each cycle ***
+
+
+=== === === === === === === === === ===
+
+~-> Input: { M: '3', F: '2' }
+
+~-> Permutations: len([(3, 5), (5, 2)])
+
+~-> Output: [ 2 ]
+
+=== === === === === === === === === ===
+
+###########################################################################
+###########################################################################
+
+
+2) Need to ensure that you have; 
+
+	-> [ Exactly the right number ] of [ Mach ] and [ Facula ] bombs to destroy the device 
+
+> Too few:
+	-> The device might survive.
+
+> Too many: 
+	-> Might overload the mass capacitors
+	-> Creating a singularity at the heart of the space station - not good! 
+
+
+###########################################################################
+###########################################################################
+
+
+3) Only one of each type of bomb was initially smuggled onto the ship
+
+	-> [ one Mach ] & [ one Facula ]
+
+
+-> That's all we have to start with. 
+
+	~-> Thus it may be impossible to deploy the bombs to destroy the device
+
+	~~> But we still try
+
+
+###########################################################################
+###########################################################################
+
+> You need to know; 
+
+~> How many replication cycles (generations) it will take; 
+
+	-> To generate the correct amount of bombs to destroy the device
+
+###########################################################################
+
+
+Write a function solution(M, F); 
+
+	-> Where M and F are the number of Mach and Facula bombs needed.
+
+		-> solution.solution(mach, fach)
+
+
+###########################################################################
+
+
+> Return the fewest number of generations (as a string) that need to pass;
+
+	-> Before you'll have the exact number of bombs necessary to destroy the device
+	 -or-
+	-> The string "impossible" if this can't be done!
+
+		~> [ return (count if pflag else 'impossible') ]
+
+
+###########################################################################
+
+
+> M and F will be;
+
+	-> String representations of positive integers no larger than 10^50
+
+		*-> [ input -> int(str), max(10**50) ]
+
+
+###########################################################################
+
+
+> For example if: 
+# [ M = "2" ] & [ F = "1" ] 
+	-> One generation would need to pass, 
+		~-> The solution would be "1". 
+
+> However if:
+# [ M = "2" ] & [ F = "4" ]
+	-> It would not be possible.
+		~-> The solution would be "impossible"
+
+###########################################################################
+
+=== === === === === ===
+
+Input: 	-> ('4', '7')
+Output: -> 4
+
+Input: 	-> ('2', '1')
+Output: -> 1
+		
+Input: 	-> ('3', '2')
+Output: -> 2
+
+Input: 	-> ('2', '4')
+Output: -> 'impossible'
+
+=== === === === === ===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

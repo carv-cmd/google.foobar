@@ -1,0 +1,8 @@
+#/bin/bash
+
+echo -e "\n$(date)"
+echo -e "Sys-$(vcgencmd measure_temp)"
+
+time python2.7 bombs2.py --func "${1:-0}" -M "${2:-2}" -R "${3:-0}"
+
+

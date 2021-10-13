@@ -1,0 +1,29 @@
+# i-love-lance-janice: decode 'cryptographic' messages
+
+# Encoding Schema:
+====================
+
+	-> lowercase: [ a - z ] : transpose : [ z - a ]
+
+	-> UPPERCASE & Punctuation left untouched
+
+======================================================================
+
+Input:
+
+	"wrw blf hvv ozhg mrtsg'h vkrhlwv?"
+
+Output:
+
+	did you see last night's episode?
+
+======================================================================
+
+Input:
+
+	"Yvzs! I xzm'g yvorvev Lzmxv olhg srh qly zg gsv xlolmb!!" 
+
+Output:
+
+	"Yeah! I can't believe Lance lost his job at the colony!!"
+
